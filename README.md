@@ -81,6 +81,10 @@ The code was written with the assistance of Claude (Anthropic). Every function w
 reviewed by the author and checked to give the same results as the author's earlier
 implementation, which was used in preparing the paper.
 
+## License
+
+MIT License (see `LICENSE`).
+
 ## Reference
 
 Rasmussen, T.K., Duncan, L.C., Watling, D.P., Nielsen, O.A., 2024. Local detouredness:
