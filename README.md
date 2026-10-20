@@ -71,9 +71,11 @@ See the docstrings (e.g. `?solve_bcmldt_sue`) for the arguments.
 
 ## Data
 
-The networks are taken from the Transportation Networks for Research repository
-(https://github.com/bstabler/TransportationNetworks), fixed at commit
-`375e0da93858c547230c5cf9ea8a96de4ccff29e` (see `download_tntp`).
+The networks are taken from the following repository, fixed at commit
+`375e0da93858c547230c5cf9ea8a96de4ccff29e` (see `download_tntp`):
+
+Transportation Networks for Research Core Team. Transportation Networks for Research.
+https://github.com/bstabler/TransportationNetworks. Accessed October 20, 2026.
 
 ## Use of AI
 
