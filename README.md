@@ -79,9 +79,8 @@ https://github.com/bstabler/TransportationNetworks. Accessed October 20, 2026.
 
 ## Use of AI
 
-The code was written with the assistance of Claude (Anthropic). The author reviewed
-every function and checked that it gives the same results as the author's earlier
-implementation used in preparing the paper.
+The code was written with the assistance of Claude (Anthropic; Claude Opus 5.5 and
+Claude Fable 5.1), and every function was reviewed by the author.
 
 ## License
 
