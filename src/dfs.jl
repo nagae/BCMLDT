@@ -28,7 +28,8 @@ const _EXP_ARG_MAX = 700.0
     (; θ1, θ2, γ) = prm
     u = exp(θ1 * (d_w - C)) - exp(θ1 * (d_w - g_bound))
     isfinite(γ) || return u
-    # expm1(x) = e^x - 1 without cancellation when x ≈ 0, i.e., when φ ≈ γ
+    # e^{θ2 (γ - φ)} - 1 by expm1, which avoids cancellation when φ ≈ γ; if θ2 γ is large
+    # enough for exp to overflow, the factor divided by e^{θ2 γ} instead
     v = θ2 * γ < _EXP_ARG_MAX ? expm1(θ2 * (γ - φ)) : exp(-θ2 * φ) - exp(-θ2 * γ)
     return u * v
 end
