@@ -22,7 +22,8 @@ given by `cost_params` and ``L`` is the BCM-LDT loading (`bcmldt_loading!`).
 `m` is the number of stored differences, `ω` the damping parameter, and `ε` the
 tolerance of the relative residual ``\\|F(x_n) - x_n\\| / \\|x_n\\|``.
 
-Returns the equilibrium link flows `x`, the number of paths for each OD pair at `x`
+Returns the equilibrium link flows `x` (``F(x_n)`` instead of ``x_n`` if ``x_n`` has
+negative components), the number of paths for each OD pair at `x`
 (the choice set sizes), whether the iteration converged, the relative residuals
 for ``n = 0, 1, ...``, the total computation time, and the time spent in the
 BCM-LDT loading (Algorithm 1).
@@ -64,6 +65,7 @@ function _solve_bcmldt_sue(min_cost_table_fn, loading_fn!, net::Network, od::ODP
         push!(residuals, norm(e) / norm(x))
         verbose && @printf("n = %3d   relative residual = %.3e\n", n, residuals[end])
         if residuals[end] < ε
+            any(<(0), x) && (x = x .+ e)                  # return F(x_n) = x_n + e_n if x_n has negative components
             return (x = x, num_paths = num_paths, converged = true, residuals = residuals,
                     time_total = time() - time_start, time_loading = time_loading)
         end
