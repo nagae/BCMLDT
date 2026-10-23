@@ -4,8 +4,9 @@ A Julia implementation of the link-based solution method for the stochastic user
 equilibrium (SUE) under the bounded choice model with local detour threshold (BCM-LDT)
 of Rasmussen et al. (2024), described in
 
-> T. Nagae, A link-based algorithm for the stochastic user equilibrium under the bounded
-> choice model with local detour threshold, arXiv:XXXX.XXXXX.
+> T. Nagae (2026). A Link-Based Algorithm for Stochastic User Equilibrium with Bounded
+> Choice and Local Detour Threshold. arXiv:2610.29151.
+> https://arxiv.org/abs/2610.29151
 
 The SUE is solved as a fixed point in aggregate link flows, x = L(t(x)), where the
 loading L enumerates the paths in each choice set by a pruned depth-first search
